@@ -4,6 +4,8 @@ An example to replicate an error in Nextflow when staging foreign files to S3 vi
 
 Nextflow logs for replicating (and avoiding) the error can be found in the `logs/` directory.
 
+The error and this example are discussed in **[nextflow-io/nextflow#6555](https://github.com/nextflow-io/nextflow/issues/6555)**.
+
 ## Error description
 
 When running Nextflow 25.10.0 where a foreign file is staged into AWS S3 with multipart upload, the following error message is consistently encountered:
