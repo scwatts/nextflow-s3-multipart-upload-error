@@ -1,0 +1,32 @@
+N E X T F L O W  ~  version 25.10.0
+Launching `main.nf` [silly_dijkstra] DSL2 - revision: 29c0190f6b
+Staging foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+Staging foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+WARN: Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz (try 1 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+WARN: Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz (try 1 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+WARN: Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz (try 2 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+WARN: Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz (try 2 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+WARN: Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz (try 3 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+WARN: Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz (try 3 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+ERROR ~ Error executing process > 'LIST (1)'
+
+Caused by:
+  Can't stage file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz -- reason: Failed to complete Amazon S3 multipart upload
+
+
+Command executed:
+
+  ls -lh HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+
+Command exit status:
+  -
+
+Command output:
+  (empty)
+
+Container:
+  quay.io/bioconda/base-glibc-busybox-bash:3.1
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details

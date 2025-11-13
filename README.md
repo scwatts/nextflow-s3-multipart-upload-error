@@ -2,6 +2,8 @@
 
 An example to replicate an error in Nextflow when staging foreign files to S3 via multipart upload.
 
+Nextflow logs for replicating (and avoiding) the error can be found in the `logs/` directory.
+
 ## Error description
 
 When running Nextflow 25.10.0 where a foreign file is staged into AWS S3 with multipart upload, the following error message is consistently encountered:
@@ -58,9 +60,9 @@ Caused by: software.amazon.awssdk.services.s3.model.S3Exception: The list of par
         ... 13 common frames omitted
 ```
 
-This eventually causes the pipeline run to fail after Nextflow attempts to stage the file(s) three times
+This eventually causes the pipeline run to fail after Nextflow attempts to stage the file(s) three times.
 
-Notably this does not occur when running the exact same analysis with Nextflow 25.04.6 via `NXF_VER=25.04.6 nextflow run ...`
+Notably this does not occur when running the exact same analysis with Nextflow 25.04.6
 
 ## Requirements
 
@@ -70,7 +72,6 @@ The following are needed before proceeding:
   - see `cdk_application/lib/settings.ts` and `nextflow_pipeline/nextflow.config`
 - adjust the instance role in `nextflow_pipeline/nextflow.config`
 - set AWS credentials in corresponding environment variables
-
 
 ## Prepare
 

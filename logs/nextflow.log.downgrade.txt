@@ -1,0 +1,104 @@
+Nov-13 03:31:33.873 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -ansi-log false --monochrome_logs -work-dir 's3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade/'
+Nov-13 03:31:33.960 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+Nov-13 03:31:34.001 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ssm-user/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+Nov-13 03:31:34.056 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-13 03:31:34.057 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-13 03:31:34.063 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Nov-13 03:31:34.090 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-13 03:31:34.147 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/ssm-user/working/2_checkpoint/nextflow-s3-multipart-upload-error/nextflow_pipeline/nextflow.config
+Nov-13 03:31:34.158 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ssm-user/working/2_checkpoint/nextflow-s3-multipart-upload-error/nextflow_pipeline/nextflow.config
+Nov-13 03:31:34.226 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ssm-user/.nextflow/secrets/store.json
+Nov-13 03:31:34.231 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@10ec523c] - activable => nextflow.secret.LocalSecretsProvider@10ec523c
+Nov-13 03:31:34.260 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Nov-13 03:31:35.046 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Nov-13 03:31:35.072 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [focused_galileo] DSL2 - revision: 29c0190f6b
+Nov-13 03:31:35.075 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[nf-amazon@2.15.0]
+Nov-13 03:31:35.076 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-amazon@2.15.0]
+Nov-13 03:31:35.080 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 2.15.0
+Nov-13 03:31:35.097 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@2.15.0' resolved
+Nov-13 03:31:35.097 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@2.15.0'
+Nov-13 03:31:35.128 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@2.15.0
+Nov-13 03:31:35.153 [main] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+Nov-13 03:31:35.239 [main] DEBUG nextflow.Session - Session UUID: e8dafd28-264e-4893-96db-8593150af508
+Nov-13 03:31:35.239 [main] DEBUG nextflow.Session - Run name: focused_galileo
+Nov-13 03:31:35.240 [main] DEBUG nextflow.Session - Executor pool size: 2
+Nov-13 03:31:35.263 [main] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider
+Nov-13 03:31:35.284 [main] DEBUG nextflow.cloud.aws.config.AwsConfig - AWS S3 config properties: {max_error_retry=5}
+Nov-13 03:31:36.163 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Nov-13 03:31:36.170 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-13 03:31:36.193 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.6 build 5954
+  Created: 01-07-2025 11:27 UTC 
+  System: Linux 5.10.230-223.885.amzn2.x86_64
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 23.0.2-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 6970@ip-172-31-14-120.ap-southeast-2.compute.internal [172.31.14.120]
+  CPUs: 2 - Mem: 15.4 GB (10.3 GB) - Swap: 0 (0)
+Nov-13 03:31:36.746 [main] DEBUG nextflow.file.FileHelper - Unable to determine FS type (1): s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade
+
+Nov-13 03:31:36.746 [main] DEBUG nextflow.Session - Work-dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade [null]
+Nov-13 03:31:36.747 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ssm-user/working/2_checkpoint/nextflow-s3-multipart-upload-error/nextflow_pipeline/bin
+Nov-13 03:31:36.784 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[AwsBatchExecutor]
+Nov-13 03:31:36.803 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Nov-13 03:31:36.808 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Nov-13 03:31:36.852 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-13 03:31:36.865 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 3; maxThreads: 1000
+Nov-13 03:31:36.939 [main] DEBUG nextflow.Session - Session start
+Nov-13 03:31:37.285 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-13 03:31:37.463 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:LIST` matches process LIST
+Nov-13 03:31:37.476 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+Nov-13 03:31:37.477 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+Nov-13 03:31:37.481 [main] DEBUG nextflow.executor.Executor - [warm up] executor > awsbatch
+Nov-13 03:31:37.498 [main] DEBUG nextflow.util.ThrottlingExecutor - Creating throttling executor with opts: nextflow.util.ThrottlingExecutor$Options(poolName:AWSBatch-executor, limiter:RateLimiter[stableRate=50.0qps], poolSize:10, maxPoolSize:10, queueSize:5000, maxRetries:10, keepAlive:1m, autoThrottle:true, errorBurstDelay:1s, rampUpInterval:100, rampUpFactor:1.2, rampUpMaxRate:1.7976931348623157E308, backOffFactor:2.0, backOffMinRate:0.0166666667, retryDelay:1s)
+Nov-13 03:31:37.504 [main] DEBUG nextflow.util.ThrottlingExecutor - Creating throttling executor with opts: nextflow.util.ThrottlingExecutor$Options(poolName:AWSBatch-reaper, limiter:RateLimiter[stableRate=50.0qps], poolSize:10, maxPoolSize:10, queueSize:5000, maxRetries:10, keepAlive:1m, autoThrottle:true, errorBurstDelay:1s, rampUpInterval:100, rampUpFactor:1.2, rampUpMaxRate:1.7976931348623157E308, backOffFactor:2.0, backOffMinRate:0.0166666667, retryDelay:1s)
+Nov-13 03:31:37.546 [main] DEBUG n.cloud.aws.batch.AwsBatchExecutor - Creating parallel monitor for executor 'awsbatch' > pollInterval=10s; dumpInterval=5m
+Nov-13 03:31:37.554 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: awsbatch)
+Nov-13 03:31:37.600 [main] DEBUG n.cloud.aws.batch.AwsBatchExecutor - [AWS BATCH] Executor options=AwsOptions(remoteBinDir:null, fetchInstanceType:false, region:null, jobRole:arn:aws:iam::843407916570:role/nextflow-s3-multipart-upload-error-batch-instance-role--task, logsGroup:null, retryMode:standard, shareIdentifier:null, schedulingPriority:0, cliPath:/opt/awscliv2/bin/aws, volumes:[/scratch], maxParallelTransfers:4, maxTransferAttempts:5, maxSpotAttempts:null, delayBetweenAttempts:10s, storageClass:null, storageEncryption:null, storageKmsKeyId:null, s3Acl:null, debug:null, requesterPays:null, awsCli:/opt/awscliv2/bin/aws, fargateMode:false, s5cmdPath:null, executionRole:null)
+Nov-13 03:31:37.632 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'LIST': maxForks=0; fair=false; array=0
+Nov-13 03:31:37.689 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: LIST
+Nov-13 03:31:37.693 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+Nov-13 03:31:37.695 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > LIST
+Nov-13 03:31:37.700 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_c671b7d33facf1b2: /home/ssm-user/working/2_checkpoint/nextflow-s3-multipart-upload-error/nextflow_pipeline/main.nf
+Nov-13 03:31:37.701 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Nov-13 03:31:37.701 [main] DEBUG nextflow.Session - Session await
+Nov-13 03:31:39.407 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade/stage-e8dafd28-264e-4893-96db-8593150af508/bf/3b869b42f94cd61155d81e12939272/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+Nov-13 03:31:39.452 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade/stage-e8dafd28-264e-4893-96db-8593150af508/d0/ceed3f8bacc4e7664daa1ca0e3f635/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+Nov-13 03:31:40.822 [FileTransfer-1] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'S3StreamUploader' minThreads (10) cannot be greater than maxThreads (6) - Setting minThreads to 6
+Nov-13 03:31:40.822 [FileTransfer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'S3StreamUploader' minSize=6; maxSize=6; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-13 03:31:40.823 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 03:31:41.389 [Actor Thread 1] INFO  nextflow.file.FilePorter - Staging foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+Nov-13 03:31:41.394 [Actor Thread 2] INFO  nextflow.file.FilePorter - Staging foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+Nov-13 03:31:42.086 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 03:31:46.042 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 03:31:50.694 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 3
+Nov-13 03:31:53.740 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 03:32:07.841 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 3
+Nov-13 03:36:47.637 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > No more task to compute -- The following nodes are still active:
+[process] LIST
+  status=ACTIVE
+  port 0: (queue) closed; channel: f
+  port 1: (cntrl) -     ; channel: $
+
+Nov-13 03:38:22.906 [AWSBatch-executor-1] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] [AWS BATCH] Found job definition name=nf-quay-io-bioconda-base-glibc-busybox-bash-3-1:1; container=quay.io/bioconda/base-glibc-busybox-bash:3.1
+Nov-13 03:38:22.993 [AWSBatch-executor-1] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `LIST (2)` submitted > job=8d8b29b8-f5dd-472a-8094-0db437872bdd; work-dir=s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade/c8/c27f3afd3d7238a7fc39fe568c5380
+Nov-13 03:38:22.994 [AWSBatch-executor-1] INFO  nextflow.Session - [c8/c27f3a] Submitted process > LIST (2)
+Nov-13 03:38:58.811 [AWSBatch-executor-6] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `LIST (1)` submitted > job=987699ab-bea7-46d9-8f78-31e8e5798aaa; work-dir=s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade/9c/c3cf581f1cad174dc70c17b5f157e1
+Nov-13 03:38:58.812 [AWSBatch-executor-6] INFO  nextflow.Session - [9c/c3cf58] Submitted process > LIST (1)
+Nov-13 03:41:47.646 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: LIST (2); status: SUBMITTED; exit: -; error: -; workDir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade/c8/c27f3afd3d7238a7fc39fe568c5380]
+~> TaskHandler[id: 1; name: LIST (1); status: SUBMITTED; exit: -; error: -; workDir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade/9c/c3cf581f1cad174dc70c17b5f157e1]
+Nov-13 03:43:47.767 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: LIST (2); status: COMPLETED; exit: 0; error: -; workDir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade/c8/c27f3afd3d7238a7fc39fe568c5380]
+Nov-13 03:43:47.768 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-13 03:43:47.783 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: LIST (1); status: COMPLETED; exit: 0; error: -; workDir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/downgrade/9c/c3cf581f1cad174dc70c17b5f157e1]
+Nov-13 03:43:47.823 [main] DEBUG nextflow.Session - Session await > all processes finished
+Nov-13 03:43:57.652 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: awsbatch) - terminating tasks monitor poll loop
+Nov-13 03:43:57.653 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Nov-13 03:43:57.655 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Nov-13 03:43:57.664 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=2; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=4m; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=12 GB; ]
+Nov-13 03:43:57.673 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Nov-13 03:43:57.686 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-amazon@2.15.0'
+Nov-13 03:43:57.687 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-amazon
+Nov-13 03:43:57.688 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Nov-13 03:43:57.690 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'S3StreamUploader' shutdown completed (hard=false)
+Nov-13 03:43:57.690 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

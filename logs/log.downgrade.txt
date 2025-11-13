@@ -1,0 +1,9 @@
+[33mNextflow 25.10.0 is available - Please consider updating your version to it(B[m
+N E X T F L O W  ~  version 25.04.6
+Launching `main.nf` [focused_galileo] DSL2 - revision: 29c0190f6b
+Staging foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+Staging foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+[c8/c27f3a] Submitted process > LIST (2)
+[9c/c3cf58] Submitted process > LIST (1)
+-rw-r--r--    1 root     root       11.9G Nov 13 03:31 HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+-rw-r--r--    1 root     root       10.6G Nov 13 03:31 HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz

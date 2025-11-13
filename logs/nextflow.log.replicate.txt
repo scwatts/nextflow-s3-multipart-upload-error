@@ -1,0 +1,465 @@
+Nov-13 03:45:02.708 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -ansi-log false --monochrome_logs -work-dir 's3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate/'
+Nov-13 03:45:02.894 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.10.0
+Nov-13 03:45:02.988 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/ssm-user/working/2_checkpoint/nextflow-s3-multipart-upload-error/nextflow_pipeline/nextflow.config
+Nov-13 03:45:02.998 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ssm-user/working/2_checkpoint/nextflow-s3-multipart-upload-error/nextflow_pipeline/nextflow.config
+Nov-13 03:45:03.081 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Nov-13 03:45:03.858 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ssm-user/.nextflow/plugins; core-plugins: nf-amazon@3.4.1,nf-azure@1.20.2,nf-cloudcache@0.5.0,nf-codecommit@0.5.0,nf-console@1.3.0,nf-google@1.23.3,nf-k8s@1.2.2,nf-tower@1.17.1,nf-wave@1.16.1
+Nov-13 03:45:03.887 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-13 03:45:03.888 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-13 03:45:03.916 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Nov-13 03:45:03.948 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Nov-13 03:45:04.144 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-13 03:45:04.147 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[nf-amazon@3.4.1]
+Nov-13 03:45:04.147 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-amazon@3.4.1]
+Nov-13 03:45:05.232 [main] DEBUG n.plugin.HttpPluginRepository - Registry request: https://registry.nextflow.io/api/v1/plugins/dependencies?plugins=nf-amazon%403.4.1&nextflowVersion=25.10.0
+- code: 200
+- body: {"plugins":[{"id":"nf-amazon","downloadCount":15380,"downloadGhCount":1342585,"releases":[{"version":"3.4.1","url":"https://registry.nextflow.io/api/v1/plugins/nf-amazon/3.4.1/download/nf-amazon-3.4.1.zip","date":"2025-10-22T16:29:06.396625Z","sha512sum":"bc7c4b6166aa5ef32df3362ceec263df434875b1db332594cd71c8d3f462adfcad55802034cbcfd269917e1efa4f45d224143f024fc1170d156daa40897f3873","requires":">=25.09.2-edge","dependsOn":[],"downloadCount":12691,"downloadGhCount":0,"status":"PUBLISHED","spec":null}],"projectUrl":"https://github.com/nextflow-io/nf-amazon","provider":"nextflow-io","description":null}]}
+Nov-13 03:45:05.305 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 3.4.1
+Nov-13 03:45:05.326 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@3.4.1' resolved
+Nov-13 03:45:05.326 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@3.4.1'
+Nov-13 03:45:05.363 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@3.4.1
+Nov-13 03:45:05.382 [main] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+Nov-13 03:45:05.409 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ssm-user/.nextflow/secrets/store.json
+Nov-13 03:45:05.414 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@6975fb1c] - activable => nextflow.secret.LocalSecretsProvider@6975fb1c
+Nov-13 03:45:05.416 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Nov-13 03:45:05.433 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [silly_dijkstra] DSL2 - revision: 29c0190f6b
+Nov-13 03:45:05.517 [main] DEBUG nextflow.Session - Session UUID: c0bf49d6-1c40-4a93-9579-038e4a61d400
+Nov-13 03:45:05.518 [main] DEBUG nextflow.Session - Run name: silly_dijkstra
+Nov-13 03:45:05.519 [main] DEBUG nextflow.Session - Executor pool size: 2
+Nov-13 03:45:05.541 [main] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider; config=[batch:[cliPath:/opt/awscliv2/bin/aws, volumes:/scratch, jobRole:arn:aws:iam::843407916570:role/nextflow-s3-multipart-upload-error-batch-instance-role--task]]
+Nov-13 03:45:05.565 [main] DEBUG nextflow.cloud.aws.config.AwsConfig - AWS S3 config properties: {max_error_retry=5}
+Nov-13 03:45:07.115 [main] DEBUG nextflow.cloud.aws.nio.S3Client - Unable to fetch caller account - User: arn:aws:sts::843407916570:assumed-role/nextflow-s3-multipart-upload-error-batch-instance-role--pipeline/i-0cdd4947f055d6ddd is not authorized to perform: s3:ListAllMyBuckets because no identity-based policy allows the s3:ListAllMyBuckets action (Service: S3, Status Code: 403, Request ID: 3PQJMW4Y5MDR2KV0, Extended Request ID: Q6g3XvKaYkers8XJv27d7eaUCSUAkLZVd5PNyFa98Y3qFSHP6LujzQhb8nwS/x5CIOLVtuPlnhyGhJg34VExIiQkvGrO6mJUpkRHSiwm+lM=) (SDK Attempt Count: 1) 
+Nov-13 03:45:07.139 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Nov-13 03:45:07.148 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-13 03:45:07.175 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.10.0 build 10289
+  Created: 22-10-2025 16:26 UTC 
+  System: Linux 5.10.230-223.885.amzn2.x86_64
+  Runtime: Groovy 4.0.28 on OpenJDK 64-Bit Server VM 23.0.2-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 7233@ip-172-31-14-120.ap-southeast-2.compute.internal [172.31.14.120]
+  CPUs: 2 - Mem: 15.4 GB (10.3 GB) - Swap: 0 (0)
+Nov-13 03:45:07.938 [main] DEBUG nextflow.file.FileHelper - Unable to determine FS type (1): s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate
+
+Nov-13 03:45:07.938 [main] DEBUG nextflow.Session - Work-dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate [null]
+Nov-13 03:45:07.939 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ssm-user/working/2_checkpoint/nextflow-s3-multipart-upload-error/nextflow_pipeline/bin
+Nov-13 03:45:07.969 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[AwsBatchExecutor]
+Nov-13 03:45:07.989 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Nov-13 03:45:07.992 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Nov-13 03:45:08.052 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-13 03:45:08.068 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 3; maxThreads: 1000
+Nov-13 03:45:08.135 [main] DEBUG nextflow.Session - Session start
+Nov-13 03:45:08.423 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-13 03:45:08.617 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:LIST` matches process LIST
+Nov-13 03:45:08.626 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+Nov-13 03:45:08.627 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+Nov-13 03:45:08.635 [main] DEBUG nextflow.executor.Executor - [warm up] executor > awsbatch
+Nov-13 03:45:08.649 [main] DEBUG nextflow.util.ThrottlingExecutor - Creating throttling executor with opts: nextflow.util.ThrottlingExecutor$Options(poolName:AWSBatch-executor, limiter:RateLimiter[stableRate=50.0qps], poolSize:10, maxPoolSize:10, queueSize:5000, maxRetries:10, keepAlive:1m, autoThrottle:true, errorBurstDelay:1s, rampUpInterval:100, rampUpFactor:1.2, rampUpMaxRate:1.7976931348623157E308, backOffFactor:2.0, backOffMinRate:0.0166666667, retryDelay:1s)
+Nov-13 03:45:08.655 [main] DEBUG nextflow.util.ThrottlingExecutor - Creating throttling executor with opts: nextflow.util.ThrottlingExecutor$Options(poolName:AWSBatch-reaper, limiter:RateLimiter[stableRate=50.0qps], poolSize:10, maxPoolSize:10, queueSize:5000, maxRetries:10, keepAlive:1m, autoThrottle:true, errorBurstDelay:1s, rampUpInterval:100, rampUpFactor:1.2, rampUpMaxRate:1.7976931348623157E308, backOffFactor:2.0, backOffMinRate:0.0166666667, retryDelay:1s)
+Nov-13 03:45:08.656 [main] DEBUG n.cloud.aws.batch.AwsBatchExecutor - Creating parallel monitor for executor 'awsbatch' > pollInterval=10s; dumpInterval=5m
+Nov-13 03:45:08.663 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: awsbatch)
+Nov-13 03:45:08.768 [main] DEBUG n.cloud.aws.batch.AwsBatchExecutor - [AWS BATCH] Executor options=AwsOptions(remoteBinDir:null, fetchInstanceType:false, region:null, jobRole:arn:aws:iam::843407916570:role/nextflow-s3-multipart-upload-error-batch-instance-role--task, logsGroup:null, retryMode:standard, shareIdentifier:null, schedulingPriority:0, cliPath:/opt/awscliv2/bin/aws, volumes:[/scratch], maxParallelTransfers:4, maxTransferAttempts:5, maxSpotAttempts:null, delayBetweenAttempts:10s, storageClass:null, storageEncryption:null, storageKmsKeyId:null, s3Acl:null, debug:null, requesterPays:null, awsCli:/opt/awscliv2/bin/aws, fargateMode:false, s5cmdPath:null, executionRole:null)
+Nov-13 03:45:08.810 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'LIST': maxForks=0; fair=false; array=0
+Nov-13 03:45:08.862 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: LIST
+Nov-13 03:45:08.865 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+Nov-13 03:45:08.871 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > LIST
+Nov-13 03:45:08.877 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_c671b7d33facf1b2: /home/ssm-user/working/2_checkpoint/nextflow-s3-multipart-upload-error/nextflow_pipeline/main.nf
+Nov-13 03:45:08.878 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Nov-13 03:45:08.878 [main] DEBUG nextflow.Session - Session await
+Nov-13 03:45:09.966 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate/stage-c0bf49d6-1c40-4a93-9579-038e4a61d400/69/49ca8cbfd5c53e9d5a5f008c74b5f6/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+Nov-13 03:45:10.013 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate/stage-c0bf49d6-1c40-4a93-9579-038e4a61d400/85/2d7e7e0d0f221fb7d2ced7d00810a1/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+Nov-13 03:45:11.867 [FileTransfer-1] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'S3StreamUploader' minThreads (10) cannot be greater than maxThreads (6) - Setting minThreads to 6
+Nov-13 03:45:11.868 [FileTransfer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'S3StreamUploader' minSize=6; maxSize=6; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-13 03:45:11.869 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 03:45:11.947 [Actor Thread 2] INFO  nextflow.file.FilePorter - Staging foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+Nov-13 03:45:11.950 [Actor Thread 4] INFO  nextflow.file.FilePorter - Staging foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+Nov-13 03:45:12.647 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 03:45:20.537 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 03:45:39.616 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 03:46:19.832 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 3
+Nov-13 03:50:18.730 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > No more task to compute -- The following nodes are still active:
+[process] LIST
+  status=ACTIVE
+  port 0: (queue) closed; channel: f
+  port 1: (cntrl) -     ; channel: $
+
+Nov-13 03:50:45.141 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Stage foreign file exception: recoverable=true; type=java.io.IOException; message=Failed to complete Amazon S3 multipart upload
+Nov-13 03:50:45.143 [FileTransfer-1] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz (try 1 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+java.io.IOException: Failed to complete Amazon S3 multipart upload
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:563)
+	at nextflow.cloud.aws.nio.S3OutputStream.close(S3OutputStream.java:399)
+	at java.base/java.nio.file.Files.copy(Files.java:3176)
+	at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:95)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:178)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:1014)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:373)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:328)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: software.amazon.awssdk.services.s3.model.S3Exception: The list of parts was not in ascending order. Parts must be ordered by part number. (Service: S3, Status Code: 200, Request ID: 02RRXZXQ0W4E45XR, Extended Request ID: 7g38WvUqOGk9bw2K/jF9c9Ue05sgmIesuULoFecsBRt/SaE4RxhRAsUEMojlyn+J6c3j32YnXnk=) (SDK Attempt Count: 1)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:113)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:61)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.utils.RetryableStageHelper.retryPolicyDisallowedRetryException(RetryableStageHelper.java:168)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:53)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:35)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:82)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:62)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:43)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:32)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:210)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:173)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:80)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:182)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:74)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:53)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:801)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.lambda$completeMultipartUpload$1(DelegatingS3Client.java:611)
+	at software.amazon.awssdk.services.s3.internal.crossregion.S3CrossRegionSyncClient.invokeOperation(S3CrossRegionSyncClient.java:67)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.completeMultipartUpload(DelegatingS3Client.java:611)
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:556)
+	... 13 common frames omitted
+Nov-13 03:50:45.299 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate/stage-c0bf49d6-1c40-4a93-9579-038e4a61d400/69/49ca8cbfd5c53e9d5a5f008c74b5f6/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+Nov-13 03:50:46.766 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 03:50:49.229 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 03:51:37.137 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Stage foreign file exception: recoverable=true; type=java.io.IOException; message=Failed to complete Amazon S3 multipart upload
+Nov-13 03:51:37.139 [FileTransfer-2] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz (try 1 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+java.io.IOException: Failed to complete Amazon S3 multipart upload
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:563)
+	at nextflow.cloud.aws.nio.S3OutputStream.close(S3OutputStream.java:399)
+	at java.base/java.nio.file.Files.copy(Files.java:3176)
+	at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:95)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:178)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:1014)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:373)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:328)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: software.amazon.awssdk.services.s3.model.S3Exception: The list of parts was not in ascending order. Parts must be ordered by part number. (Service: S3, Status Code: 200, Request ID: 2AYYMK0GZ72JV4F3, Extended Request ID: n/ms0G8OqqDSsyDgGqAWwAC+pPqH7uELGfCEfQ/kEHBE4rNtkp/WXRWqRWBt6nLEb6cGyCHhqMOjUf2IsHF3Mk+HIbr8k+7EfHGz+kDsdpI=) (SDK Attempt Count: 1)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:113)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:61)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.utils.RetryableStageHelper.retryPolicyDisallowedRetryException(RetryableStageHelper.java:168)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:53)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:35)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:82)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:62)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:43)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:32)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:210)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:173)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:80)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:182)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:74)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:53)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:801)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.lambda$completeMultipartUpload$1(DelegatingS3Client.java:611)
+	at software.amazon.awssdk.services.s3.internal.crossregion.S3CrossRegionSyncClient.invokeOperation(S3CrossRegionSyncClient.java:67)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.completeMultipartUpload(DelegatingS3Client.java:611)
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:556)
+	... 13 common frames omitted
+Nov-13 03:51:37.265 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate/stage-c0bf49d6-1c40-4a93-9579-038e4a61d400/85/2d7e7e0d0f221fb7d2ced7d00810a1/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+Nov-13 03:51:38.557 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 03:51:43.069 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 03:55:18.747 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > No more task to compute -- The following nodes are still active:
+[process] LIST
+  status=ACTIVE
+  port 0: (queue) closed; channel: f
+  port 1: (cntrl) -     ; channel: $
+
+Nov-13 03:57:30.717 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Stage foreign file exception: recoverable=true; type=java.io.IOException; message=Failed to complete Amazon S3 multipart upload
+Nov-13 03:57:30.718 [FileTransfer-1] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz (try 2 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+java.io.IOException: Failed to complete Amazon S3 multipart upload
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:563)
+	at nextflow.cloud.aws.nio.S3OutputStream.close(S3OutputStream.java:399)
+	at java.base/java.nio.file.Files.copy(Files.java:3176)
+	at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:95)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:178)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:1014)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:373)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:328)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+	Suppressed: java.io.IOException: Read data length does not match expected size - bytes read: 11057823744; expected: 11395458274
+		at nextflow.file.http.FixedInputStream.close(FixedInputStream.groovy:70)
+		at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:94)
+		... 10 common frames omitted
+Caused by: software.amazon.awssdk.services.s3.model.S3Exception: The list of parts was not in ascending order. Parts must be ordered by part number. (Service: S3, Status Code: 200, Request ID: XKJD6V0615CMZQFH, Extended Request ID: JKmorlTDHiSC5MHwt7QcxOI2ydFaBIzQE+pi1Qfc9XAoGTLQFZ1KeGEA4vhcc3Q/C0AHXzyL+VY=) (SDK Attempt Count: 1)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:113)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:61)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.utils.RetryableStageHelper.retryPolicyDisallowedRetryException(RetryableStageHelper.java:168)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:53)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:35)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:82)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:62)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:43)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:32)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:210)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:173)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:80)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:182)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:74)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:53)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:801)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.lambda$completeMultipartUpload$1(DelegatingS3Client.java:611)
+	at software.amazon.awssdk.services.s3.internal.crossregion.S3CrossRegionSyncClient.invokeOperation(S3CrossRegionSyncClient.java:67)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.completeMultipartUpload(DelegatingS3Client.java:611)
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:556)
+	... 13 common frames omitted
+Nov-13 03:57:30.847 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate/stage-c0bf49d6-1c40-4a93-9579-038e4a61d400/69/49ca8cbfd5c53e9d5a5f008c74b5f6/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+Nov-13 03:57:32.187 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 03:57:37.227 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 03:58:22.954 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 3
+Nov-13 03:58:55.857 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Stage foreign file exception: recoverable=true; type=java.io.IOException; message=Failed to complete Amazon S3 multipart upload
+Nov-13 03:58:55.859 [FileTransfer-2] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz (try 2 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+java.io.IOException: Failed to complete Amazon S3 multipart upload
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:563)
+	at nextflow.cloud.aws.nio.S3OutputStream.close(S3OutputStream.java:399)
+	at java.base/java.nio.file.Files.copy(Files.java:3176)
+	at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:95)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:178)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:1014)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:373)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:328)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: software.amazon.awssdk.services.s3.model.S3Exception: The list of parts was not in ascending order. Parts must be ordered by part number. (Service: S3, Status Code: 200, Request ID: XT8BR6BRZDQC48K8, Extended Request ID: iQ0yPtx33lEGIygpqhmQ/H6bvHrewFZKFkVkN3lR9WDPRFaNsbb7O9WRSykC7xzUkwuUJ3hXwxTkl8r+hIVMFDiG5NejdxkS) (SDK Attempt Count: 1)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:113)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:61)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.utils.RetryableStageHelper.retryPolicyDisallowedRetryException(RetryableStageHelper.java:168)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:53)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:35)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:82)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:62)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:43)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:32)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:210)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:173)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:80)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:182)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:74)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:53)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:801)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.lambda$completeMultipartUpload$1(DelegatingS3Client.java:611)
+	at software.amazon.awssdk.services.s3.internal.crossregion.S3CrossRegionSyncClient.invokeOperation(S3CrossRegionSyncClient.java:67)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.completeMultipartUpload(DelegatingS3Client.java:611)
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:556)
+	... 13 common frames omitted
+Nov-13 03:58:56.004 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate/stage-c0bf49d6-1c40-4a93-9579-038e4a61d400/85/2d7e7e0d0f221fb7d2ced7d00810a1/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+Nov-13 03:58:57.690 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 03:59:00.725 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 04:00:18.764 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > No more task to compute -- The following nodes are still active:
+[process] LIST
+  status=ACTIVE
+  port 0: (queue) closed; channel: f
+  port 1: (cntrl) -     ; channel: $
+
+Nov-13 04:02:10.878 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Stage foreign file exception: recoverable=true; type=java.io.IOException; message=Failed to complete Amazon S3 multipart upload
+Nov-13 04:02:10.881 [FileTransfer-1] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz (try 3 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+java.io.IOException: Failed to complete Amazon S3 multipart upload
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:563)
+	at nextflow.cloud.aws.nio.S3OutputStream.close(S3OutputStream.java:399)
+	at java.base/java.nio.file.Files.copy(Files.java:3176)
+	at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:95)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:178)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:1014)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:373)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:328)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: software.amazon.awssdk.services.s3.model.S3Exception: The list of parts was not in ascending order. Parts must be ordered by part number. (Service: S3, Status Code: 200, Request ID: 4M8HXXQYJSJVGKK4, Extended Request ID: 5Hk0nsAJcQ7oB1yMudt5KEqOVIYDyo+S5kjQYfTQPMOBPWWUSi15qyB591ZiCs2AafKCHLYwB5g=) (SDK Attempt Count: 1)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:113)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:61)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.utils.RetryableStageHelper.retryPolicyDisallowedRetryException(RetryableStageHelper.java:168)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:53)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:35)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:82)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:62)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:43)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:32)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:210)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:173)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:80)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:182)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:74)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:53)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:801)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.lambda$completeMultipartUpload$1(DelegatingS3Client.java:611)
+	at software.amazon.awssdk.services.s3.internal.crossregion.S3CrossRegionSyncClient.invokeOperation(S3CrossRegionSyncClient.java:67)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.completeMultipartUpload(DelegatingS3Client.java:611)
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:556)
+	... 13 common frames omitted
+Nov-13 04:02:10.917 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate/stage-c0bf49d6-1c40-4a93-9579-038e4a61d400/69/49ca8cbfd5c53e9d5a5f008c74b5f6/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+Nov-13 04:02:13.286 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 04:02:19.440 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 04:03:00.950 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 3
+Nov-13 04:05:18.792 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > No more task to compute -- The following nodes are still active:
+[process] LIST
+  status=ACTIVE
+  port 0: (queue) closed; channel: f
+  port 1: (cntrl) -     ; channel: $
+
+Nov-13 04:05:50.236 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Stage foreign file exception: recoverable=true; type=java.io.IOException; message=Failed to complete Amazon S3 multipart upload
+Nov-13 04:05:50.238 [FileTransfer-2] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz (try 3 of 3) -- Cause: Failed to complete Amazon S3 multipart upload
+java.io.IOException: Failed to complete Amazon S3 multipart upload
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:563)
+	at nextflow.cloud.aws.nio.S3OutputStream.close(S3OutputStream.java:399)
+	at java.base/java.nio.file.Files.copy(Files.java:3176)
+	at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:95)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:178)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:1014)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:373)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:328)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: software.amazon.awssdk.services.s3.model.S3Exception: The list of parts was not in ascending order. Parts must be ordered by part number. (Service: S3, Status Code: 200, Request ID: 9XV85JZP2ZB4AWZ7, Extended Request ID: NSuNEtuoGshDKGfQBNv110Dv1z4WiXcHhwdOM0yEauShnSL8NT3c01YPzg8mSwcn9D5M3f3EZOE=) (SDK Attempt Count: 1)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:113)
+	at software.amazon.awssdk.services.s3.model.S3Exception$BuilderImpl.build(S3Exception.java:61)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.utils.RetryableStageHelper.retryPolicyDisallowedRetryException(RetryableStageHelper.java:168)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:73)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:53)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:35)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:82)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:62)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:43)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:50)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:32)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:210)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:173)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:80)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:182)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:74)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:53)
+	at software.amazon.awssdk.services.s3.DefaultS3Client.completeMultipartUpload(DefaultS3Client.java:801)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.lambda$completeMultipartUpload$1(DelegatingS3Client.java:611)
+	at software.amazon.awssdk.services.s3.internal.crossregion.S3CrossRegionSyncClient.invokeOperation(S3CrossRegionSyncClient.java:67)
+	at software.amazon.awssdk.services.s3.DelegatingS3Client.completeMultipartUpload(DelegatingS3Client.java:611)
+	at nextflow.cloud.aws.nio.S3OutputStream.completeMultipartUpload(S3OutputStream.java:556)
+	... 13 common frames omitted
+Nov-13 04:05:50.328 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz to work dir: s3://umccr-temp-dev/stephen/nextflow-s3-multipart-upload-error/replicate/stage-c0bf49d6-1c40-4a93-9579-038e4a61d400/85/2d7e7e0d0f221fb7d2ced7d00810a1/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.2.fastq.gz
+Nov-13 04:05:51.870 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 1
+Nov-13 04:06:12.472 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 2
+Nov-13 04:06:22.040 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3OutputStream - Allocating new buffer of 10485760 bytes, total buffers 3
+Nov-13 04:07:31.337 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=LIST (1); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz -- reason: Failed to complete Amazon S3 multipart upload
+Nov-13 04:07:31.421 [Actor Thread 2] ERROR nextflow.processor.TaskProcessor - Error executing process > 'LIST (1)'
+
+Caused by:
+  Can't stage file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz -- reason: Failed to complete Amazon S3 multipart upload
+
+
+Command executed:
+
+  ls -lh HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz
+
+Command exit status:
+  -
+
+Command output:
+  (empty)
+
+Container:
+  quay.io/bioconda/base-glibc-busybox-bash:3.1
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Nov-13 04:07:31.427 [Actor Thread 2] DEBUG nextflow.Session - Session aborted -- Cause: Can't stage file https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/HCC1395-SRA/25.0/data/wgts/fastq/HCC1395__normal_wgs__WGS_IL_N_1__SRR7890859__subsampled.1.fastq.gz -- reason: Failed to complete Amazon S3 multipart upload
+Nov-13 04:07:31.436 [Actor Thread 2] DEBUG nextflow.Session - The following nodes are still active:
+[process] LIST
+  status=ACTIVE
+  port 0: (queue) closed; channel: f
+  port 1: (cntrl) -     ; channel: $
+
+Nov-13 04:07:31.464 [Actor Thread 2] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Nov-13 04:07:31.479 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: awsbatch) - terminating tasks monitor poll loop
+Nov-13 04:07:31.481 [main] DEBUG nextflow.Session - Session await > all processes finished
+Nov-13 04:07:31.481 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Nov-13 04:07:31.481 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Nov-13 04:07:31.482 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=LIST; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Nov-13 04:07:31.495 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Nov-13 04:07:31.509 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-amazon@3.4.1'
+Nov-13 04:07:31.509 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-amazon
+Nov-13 04:07:31.512 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
